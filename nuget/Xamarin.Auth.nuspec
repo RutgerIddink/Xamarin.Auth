@@ -5,10 +5,10 @@
     -->
     <metadata minClientVersion="2.8.1">
         <id>
-            Xamarin.Auth
+            Xamarin.Auth.Compat
         </id>
         <title>
-            Xamarin.Auth
+            Xamarin.Auth.Compat
         </title>
 		<authors>
 			Microsoft
@@ -112,12 +112,12 @@
         -->
         <file
             src="..\source\Core\Xamarin.Auth.NetStandard10.ReferenceAssembly\bin\Release\netstandard1.0\Xamarin.Auth.dll"
-            target="lib/netstandard1.0/Xamarin.Auth.dll"
+            target="lib/netstandard1.0/Xamarin.Auth.Compat.dll"
             >
         </file>
         <file
             src="..\source\Core\Xamarin.Auth.NetStandard16\bin\Release\netstandard1.6\Xamarin.Auth.dll"
-            target="lib/netstandard1.6/Xamarin.Auth.dll"
+            target="lib/netstandard1.6/Xamarin.Auth.Compat.dll"
             >
         </file>
         <!--
@@ -125,12 +125,12 @@
         -->
         <file
             src="..\source\Core\Xamarin.Auth.Portable\bin\Release\Xamarin.Auth.dll"
-            target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+XamarinIOS10/Xamarin.Auth.dll"
+            target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+XamarinIOS10/Xamarin.Auth.Compat.dll"
             >
         </file>
         <file
             src="..\source\Core\Xamarin.Auth.Portable\bin\Release\Xamarin.Auth.pdb"
-            target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+XamarinIOS10/Xamarin.Auth.pdb"
+            target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+XamarinIOS10/Xamarin.Auth.Compat.pdb"
             >
         </file>
 
@@ -139,12 +139,12 @@
         -->
         <file
             src="..\source\Core\Xamarin.Auth.XamarinAndroid\bin\Release\Xamarin.Auth.dll"
-            target="lib/MonoAndroid10/Xamarin.Auth.dll"
+            target="lib/MonoAndroid10/Xamarin.Auth.Compat.dll"
             >
         </file>
         <file
             src="..\source\Core\Xamarin.Auth.XamarinAndroid\bin\Release\Xamarin.Auth.pdb"
-            target="lib/MonoAndroid10/Xamarin.Auth.pdb"
+            target="lib/MonoAndroid10/Xamarin.Auth.Compat.pdb"
             >
         </file>
 
