@@ -1946,7 +1946,7 @@ Task ("nuget")
                     {
                         Verbosity = NuGetVerbosity.Detailed,
                         OutputDirectory = "./output/",
-                        Symbols = true,
+                        Symbols = false,
                         ToolPath = nuget_4,
                         RequireLicenseAcceptance = true
                     }
@@ -1958,7 +1958,7 @@ Task ("nuget")
                     {
                         Verbosity = NuGetVerbosity.Detailed,
                         OutputDirectory = "./output/",
-                        Symbols = true,
+                        Symbols = false,
                         ToolPath = nuget_4,
                         RequireLicenseAcceptance = true
                     }
@@ -1970,7 +1970,7 @@ Task ("nuget")
                     {
                         Verbosity = NuGetVerbosity.Detailed,
                         OutputDirectory = "./output/",
-                        Symbols = true,
+                        Symbols = false,
                         ToolPath = nuget_4,
                         RequireLicenseAcceptance = true
                     }
