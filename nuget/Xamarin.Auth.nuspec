@@ -24,12 +24,10 @@
         http://semver.org/
         -->
 		<version>
-			1.8.0-pre3
+			1.8.0
         </version>
 		<releaseNotes>
-            - FindAccountsForService throws on iOS #370
-            - updates to stale projects (dependencies, targets)
-            - removed unsupported platforms (Windows Phone, Windows 8.x)
+            - Remove usage of UIWebView in iOS core project, now WKWebView only #443 
 		</releaseNotes>
         <licenseUrl>
             https://go.microsoft.com/fwlink/?linkid=2021795
