@@ -35,12 +35,11 @@ jobs:
           ArtifactName: nuget
           PathtoPublish: 'output/'
 
-      - task: DotNetCoreCLI@2
-        displayName: 'dotnet push'
+      - task: NuGetCommand@2
+        displayName: 'NuGet push'
+        condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
         inputs:
-          command: 'push'
-          packagesToPush: 'output/*.nupkg;-:output/*.symbols.nupkg' 
-          nuGetFeedType: 'internal'
-          publishVstsFeed: '0bbd457c-41d5-4f00-b6cb-94eaf8f8b4c2'
-        # condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-        continueOnError: true
+          command: push
+          publishVstsFeed: 'MagisterNuGet'
+          packagesToPush: output/*.nupkg 
+          allowPackageConflicts: true
