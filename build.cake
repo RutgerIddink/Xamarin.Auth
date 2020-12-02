@@ -1939,47 +1939,6 @@ Task ("nuget")
                 + System.Environment.NewLine
                 ;
 
-            platform = "win81";
-            if
-            (
-                ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
-            )
-            {
-                throw new System.ArgumentNullException(msg + $"platform = {platform}");
-            }
-            platform = "wp80";
-            if
-            (
-                ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
-            )
-            {
-                throw new System.ArgumentNullException(msg + $"platform = {platform}");
-            }
-            platform = "wp81";
-            if
-            (
-                ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
-            )
-            {
-                throw new System.ArgumentNullException(msg + $"platform = {platform}");
-            }
-            platform = "wpa81";
-            if
-            (
-                ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
-            )
-            {
-                throw new System.ArgumentNullException(msg + $"platform = {platform}");
-            }
-            platform = "uap10.0";
-            if
-            (
-                ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
-            )
-            {
-                throw new System.ArgumentNullException(msg + $"platform = {platform}");
-            }
-
             NuGetPack
                 (
                     "./nuget/Xamarin.Auth.nuspec",
