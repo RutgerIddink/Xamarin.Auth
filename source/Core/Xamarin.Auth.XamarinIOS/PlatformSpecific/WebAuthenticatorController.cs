@@ -156,7 +156,8 @@ namespace Xamarin.Auth._MobileServices
                     AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight,
                 };
 
-                if (UIDevice.CurrentDevice.CheckSystemVersion(9, 0))
+                if (UIDevice.CurrentDevice.CheckSystemVersion(9, 0)
+                    && WebViewConfiguration.IOS.UserAgent != null)
                 {
                     //  cheating!
                     //  http://www.useragentstring.com/pages/useragentstring.php?typ=Browser
