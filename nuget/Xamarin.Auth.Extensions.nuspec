@@ -21,7 +21,7 @@
 		http://semver.org/
 		-->
 		<version>
-			1.8.0
+			1.8.1
 		</version>
 		<releaseNotes>
             - Remove usage of UIWebView in iOS core project, now WKWebView only #443 
@@ -67,7 +67,7 @@
 			https://docs.microsoft.com/en-us/nuget/schema/nuspec#dependencies
 			-->
 			<group>
-				<dependency id="Xamarin.Auth.Compat" version="[1.8.0,)"/>
+				<dependency id="Xamarin.Auth.Compat" version="[1.8.1,)"/>
 				<dependency id="PCLCrypto" version="[2.0.147,)"/>
 			</group>
         </dependencies>

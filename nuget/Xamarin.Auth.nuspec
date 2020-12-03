@@ -24,7 +24,7 @@
         http://semver.org/
         -->
 		<version>
-			1.8.0
+			1.8.1
         </version>
 		<releaseNotes>
             - Remove usage of UIWebView in iOS core project, now WKWebView only #443 
