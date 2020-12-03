@@ -24,7 +24,7 @@
 		http://semver.org/
 		-->
 		<version>
-			1.8.1
+			1.8.0-pre7
 		</version>
 		<releaseNotes>
             - Remove usage of UIWebView in iOS core project, now WKWebView only #443 
@@ -81,7 +81,7 @@
 			https://docs.microsoft.com/en-us/nuget/schema/nuspec#dependencies
 			-->
 			<group>
-				<dependency id="Xamarin.Auth.Compat" version="[1.8.1,)"/>
+				<dependency id="Xamarin.Auth.Compat" version="[1.8.0-pre7,)"/>
 				<dependency id="Xamarin.Forms" version="[2.3,)"/>
 			</group>
 			<group targetFramework="MonoAndroid10">

@@ -3,8 +3,8 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
-trigger:
-    - master
+# trigger:
+#     - master
 
 variables:
   MONO_VERSION: 5_16_0
@@ -39,7 +39,7 @@ jobs:
 
       - task: NuGetCommand@2
         displayName: 'NuGet push'
-        condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+        # condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
         inputs:
           command: push
           publishVstsFeed: 'MagisterNuGet'

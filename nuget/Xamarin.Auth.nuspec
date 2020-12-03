@@ -24,7 +24,7 @@
         http://semver.org/
         -->
 		<version>
-			1.8.1
+			1.8.0-pre7
         </version>
 		<releaseNotes>
             - Remove usage of UIWebView in iOS core project, now WKWebView only #443 
@@ -152,12 +152,12 @@
         -->
         <file
             src="..\source\Core\Xamarin.Auth.XamarinIOS\bin\Release\Xamarin.Auth.dll"
-            target="lib/Xamarin.iOS10/Xamarin.Auth.dll"
+            target="lib/Xamarin.iOS10/Xamarin.Auth.Compat.dll"
             >
         </file>
         <file
             src="..\source\Core\Xamarin.Auth.XamarinIOS\bin\Release\Xamarin.Auth.pdb"
-            target="lib/Xamarin.iOS10/Xamarin.Auth.pdb"
+            target="lib/Xamarin.iOS10/Xamarin.Auth.Compat.pdb"
             >
         </file>
 
