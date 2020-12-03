@@ -19,11 +19,11 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle("Xamarin.Auth")]
+[assembly: AssemblyTitle("Xamarin.Auth.Compat")]
 [assembly: AssemblyDescription("Cross platform authentication library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft / Xamarin Inc.")]
-[assembly: AssemblyProduct("Xamarin.Auth")]
+[assembly: AssemblyProduct("Xamarin.Auth.Compat")]
 [assembly: AssemblyCopyright("2012-2018 Microsoft / Xamarin Inc.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -40,7 +40,7 @@ using System.Runtime.CompilerServices;
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
 
-[assembly: InternalsVisibleTo("Xamarin.Auth.XamarinForms")]
-[assembly: InternalsVisibleTo("Xamarin.Auth.Extensions")]
+[assembly: InternalsVisibleTo("Xamarin.Auth.Compat.XamarinForms")]
+[assembly: InternalsVisibleTo("Xamarin.Auth.Compat.Extensions")]
 [assembly: InternalsVisibleTo ("XamarinAuthiOSTest")]
 
