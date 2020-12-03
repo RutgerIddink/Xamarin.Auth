@@ -45,23 +45,12 @@ namespace Xamarin.Auth._MobileServices
                     return;
                 }
             }
-            
-            public static string UserAgentWKWebViewDefault
-            {
-            	get
-            	{
-            		return useragent_wkwebview;
-            	}
-            }
 
             private static NSOperatingSystemVersion os_ver = NSProcessInfo.ProcessInfo.OperatingSystemVersion;
             private static string sys_ver = UIKit.UIDevice.CurrentDevice.SystemVersion;
 
-
             static IOS()
             {
-                UserAgentFromWKWebView();
-
                 #if DEBUG
                 StringBuilder sb = new StringBuilder();
                 sb.AppendLine($"Xamarin.Auth.WebViewConfiguration.IOS");
@@ -74,85 +63,12 @@ namespace Xamarin.Auth._MobileServices
                 sb.AppendLine($"    new WKWebView().CustomUserAgent");
                 #endif
 
-
-                UserAgent = UserAgentWKWebViewDefault;
-
-                return;
-            }
-            
-            //static string app_name_wkwebview = null;
-            static string useragent_wkwebview = null;
-
-            static void UserAgentFromWKWebView()
-            {                
-                WebKit.WKWebViewConfiguration wkconf = new WebKit.WKWebViewConfiguration()
-                {
-                };
-                WebKit.WKWebView wkwv = new WebKit.WKWebView(CoreGraphics.CGRect.Empty, wkconf);
-
-                // TODO: WKWebKit UserAgent JavaScript handler not triggered from JavaScript
-                WebKit.WKJavascriptEvaluationResult handler = HandleWKJavascriptEvaluationResult;
-                // case sensitive stuff:
-                //      navigator.* 
-                // few SO posts with Pascal case will not work!
-                wkwv.EvaluateJavaScript((NSString)"navigator.userAgent", handler);
-                //wkwv.EvaluateJavaScript((NSString)"navigator.appName", handler);
-
-                wkwv.LoadHtmlString("<html></html>", null);
-
-                return;
-            }
-
-
-            static void HandleWKJavascriptEvaluationResult(Foundation.NSObject result, Foundation.NSError err)
-            {
-                if (err != null)
-                {
-                    System.Diagnostics.Debug.WriteLine($"User-Agent API error = {err}");
-
-                    useragent_wkwebview = err.ToString();
-                }
-                if (result != null)
-                {
-                    System.Diagnostics.Debug.WriteLine($"User-Agent API result = {result}");
- 
-                    useragent_wkwebview = result.ToString();
-                }
-
-                System.Diagnostics.Debug.WriteLine($"User-Agent API useragent_wkwebview = {useragent_wkwebview}");
-
-                return;
-            }
-
-            // must be called before WkWebView is created.
-            static void SetDefaultUserAgent()
-            {
-                if (os_ver.Major >= 8 && os_ver.Major < 9)
-                {                    
-                    // set default useragent for WkWebView
-                    NSDictionary dictionary = NSDictionary.FromObjectAndKey
-                                                (
-                                                    NSObject.FromObject(UserAgent),
-                                                    NSObject.FromObject("UserAgent")
-                                                );
-                    NSUserDefaults.StandardUserDefaults.RegisterDefaults(dictionary);
-
-                    return;
-                }
-                if (os_ver.Major >= 9 && os_ver.Major < 10)
-                {
-
-                    return;
-                }
-
                 return;
             }
 
             public static new string ToString()
             {
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                sb.Append    ($"         UserAgentWKWebViewDefault = ");
-                sb.AppendLine($"{Xamarin.Auth.WebViewConfiguration.IOS.UserAgentWKWebViewDefault}");
                 sb.Append    ($"         UserAgent                 = ");
 
                 return sb.ToString();
