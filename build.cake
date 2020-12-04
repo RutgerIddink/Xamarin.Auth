@@ -497,7 +497,6 @@ Task ("nuget-restore")
             Information("libs nuget_restore_settings.ToolPath = {0}", nuget_restore_settings.ToolPath);
 
             RunTarget("source-nuget-restore");
-            RunTarget("samples-nuget-restore");
 
             return;
         }
