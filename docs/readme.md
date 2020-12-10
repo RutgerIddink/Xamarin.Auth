@@ -1,4 +1,31 @@
-# Xamarin.Auth readme.md
+# UPDATE: Forked because Xamarin.Auth is unsupported
+
+[No, you shouldn't rely on Xamarin.Auth any longer. It's being replaced by authentication support in Xamarin.Essentials](https://github.com/MicrosoftDocs/xamarin-docs/issues/2613#issuecomment-601227768)
+
+The reason for fork is the deprecation of UIWebview: 
+> TMS-90809: Deprecated API Usage - Apple will stop accepting submissions of apps that use UIWebView APIs . See https://developer.apple.com/documentation/uikit/uiwebview for more information.
+
+A few things have changed to have this project be usable from the Magister LO/OP app via the dev.azure:
+- The build is done via [a pipeline](https://dev.azure.com/magister/Git/_build?definitionId=1582), Pipelines -> Magister 6 App -> Docent -> Xamarin.Auth.Compat
+- Stripped out all the non-essentials in `azure-pipelines.yaml`: so no nuget package for WPF, also disabled the build for Xamarin.Auth.XamarinForms, Xamarin.Auth.Extensions.
+- Renamed everything in this repo to Xamarin.Auth.Compat, otherwise it conflicts with the existing nuget package. Note: only renaming the resulting DLL's didnt' work, which is why EVERYTHING has been renamed.
+- The build is done on a mac-agent so it is able to build for Android and iOS at the same time
+- Added a nuget push step to `azure-pipelines.yaml` that pushes to https://dev.azure.com/magister/Git/_packaging?_a=feed&feed=MagisterNuGet
+
+# Creating a new version
+
+If there's any need to make a new version of this fork:
+- Update all the versions in `nuget/Xamarin.Auth.Compat.nuspec`
+- Push/PR to master
+- Check for new version at https://dev.azure.com/magister/Git/_packaging?_a=feed&feed=MagisterNuGet
+
+# Other issues
+
+Building this project locally on a mac with `sh build.sh -- --target=nuget` will most likely result in some missing dll error. This is because of the build uses `build.cake`, which seems to have issues with newer versions of `mono`. Try and use mono version `6.6.0` as a possible fix.
+
+Mono versions should be listed here `/Library/Frameworks/Mono.framework/Versions/`. Newer versions of mono do delete the older versions, so when testing to see if the resulting package works with the app(s), unfortunately there's some time lost installing the correct version (vsForMac only works with newer mono versions).
+
+# OLD: Xamarin.Auth readme.md
 
 Xamarin.Auth is a cross platform library that helps developers authenticate 
 users via OAuth protocol (OAuth1 and OAuth2). 
