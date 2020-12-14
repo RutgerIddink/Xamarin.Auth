@@ -32,26 +32,26 @@ build-mono:
   image: mono:latest
   before_script:
   script:
-    - nuget restore ./source/Xamarin.Auth.Compat-Library-VS2017.sln
-    - nuget restore ./source/Xamarin.Auth.Compat-Library-VS2019.sln
+    - nuget restore ./source/Xamarin.Auth-Library-VS2017.sln
+    - nuget restore ./source/Xamarin.Auth-Library-VS2019.sln
     - msbuild
         /p:Configuration="Release"
         /p:Platform="Any CPU"
-        "./source/Xamarin.Auth.Compat-Library-VS2017.sln"
+        "./source/Xamarin.Auth-Library-VS2017.sln"
     - !
     - msbuild
         /p:Configuration="Release"
         /p:Platform="Any CPU"
-        "./source/Xamarin.Auth.Compat-Library-VS2019.sln"
+        "./source/Xamarin.Auth-Library-VS2019.sln"
     - msbuild
         /p:Configuration="Debug"
         /p:Platform="Any CPU"
-        "./source/Xamarin.Auth.Compat-Library-VS2017.sln"
+        "./source/Xamarin.Auth-Library-VS2017.sln"
     - !
     - msbuild
         /p:Configuration="Debug"
         /p:Platform="Any CPU"
-        "./source/Xamarin.Auth.Compat-Library-VS2019.sln"
+        "./source/Xamarin.Auth-Library-VS2019.sln"
 
 #test-dotnet:
 #  stage: test-dotnet

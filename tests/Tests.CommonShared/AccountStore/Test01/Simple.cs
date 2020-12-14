@@ -29,8 +29,7 @@ using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Attributes.Jobs;
 #else
-using Benchmark = Core.Testing.BenchmarkTests.Benchmark;
-using ShortRunJob = Core.Testing.BenchmarkTests.ShortRunJob;
+using Benchmark = Core.Testing.BenchmarkTests.Benchmark;using ShortRunJob = Core.Testing.BenchmarkTests.ShortRunJob;
 #endif
 
 using System;
@@ -39,7 +38,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
 
-Xamarin.Auth.Compat
+
 namespace UnitTests.Xamarin.Auth.AccountStore
 {
     public partial class Simple
