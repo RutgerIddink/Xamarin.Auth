@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <RootNamespace>Xamarin.Auth.Compat.Extensions</RootNamespace>
+    <AssemblyName>Xamarin.Auth.Compat.Extensions</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Xamarin.Auth.Compat.NetStandard10.ReferenceAssembly\Xamarin.Auth.Compat.NetStandard10.ReferenceAssembly.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Xamarin.Auth.Compat.Extensions.LinkSource\Properties\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>
